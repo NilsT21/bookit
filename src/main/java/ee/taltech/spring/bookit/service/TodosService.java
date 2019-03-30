@@ -11,4 +11,6 @@ public interface TodosService {
     List<Todo> findAllTodos();
 
     Todo addTodo(Todo todo);
+
+    void setTodoDone(Long id);
 }

@@ -31,7 +31,8 @@ public class TodosController {
     }
 
     @PostMapping("form")
-    public @ResponseBody Todo addTodo(@ModelAttribute Todo todo) {
+    public @ResponseBody
+    Todo addTodo(@ModelAttribute Todo todo) {
         Todo result = todosService.addTodo(todo);
         return result;
     }
@@ -40,5 +41,12 @@ public class TodosController {
     public String getForm(Model model) {
         model.addAttribute("todo", new Todo());
         return "form";
+    }
+
+    @PutMapping
+    @ResponseBody
+    public Todo setTodoDone(Long id) {
+        todosService.setTodoDone(id);
+        return todosService.getTodo(id);
     }
 }

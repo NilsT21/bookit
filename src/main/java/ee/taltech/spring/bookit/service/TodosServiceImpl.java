@@ -27,4 +27,8 @@ public class TodosServiceImpl implements TodosService {
     public Todo addTodo(Todo todo) {
         return todosRepository.save(todo);
     }
+
+    public void setTodoDone(Long id) {
+        todosRepository.setTodoDone(id);
+    }
 }
